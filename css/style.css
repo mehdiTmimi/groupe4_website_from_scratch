@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+}
+header ol{
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+}
+header li{
+    display: block;
+}
+header li a{
+    text-decoration: none;
+    color: rgb(28, 3, 132);
+}
+header .logo-item {
+    height: 16px;
+}
+header img{
+    height: 100%;
+}
+
+header ul{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+header .lang-switch{
+    display: flex;
+    gap: 10px;
+}
+header .start-btn{
+    padding: 10px 25px;
+    color: white;
+    border: 0;
+    background: #6520ec;
+    border-radius: 20px;
+}
