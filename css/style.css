@@ -1,45 +1,87 @@
-*{
-    padding: 0;
-    margin: 0;
+:root {
+  --padding-left-right: 40px;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    align-items: center;
+* {
+  padding: 0;
+  margin: 0;
 }
-header ol{
-    display: flex;
-    align-items: flex-end;
-    gap: 30px;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px var(--padding-left-right);
+  align-items: center;
 }
-header li{
-    display: block;
+header ol {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
 }
-header li a{
-    text-decoration: none;
-    color: rgb(28, 3, 132);
+header li {
+  display: block;
+}
+header li a {
+  text-decoration: none;
+  color: rgb(28, 3, 132);
 }
 header .logo-item {
-    height: 16px;
+  height: 16px;
 }
-header img{
-    height: 100%;
+header img {
+  height: 100%;
 }
 
-header ul{
-    display: flex;
-    gap: 30px;
-    align-items: center;
+header ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
-header .lang-switch{
+header .lang-switch {
+  display: flex;
+  gap: 10px;
+}
+
+/* ============== main ================= */
+/* ============== section 1 ================= */
+main #section1 {
+  display: flex;
+  padding: 50px var(--padding-left-right);
+  align-items: center;
+}
+main #section1 .logo-section {
+  height: 50px;
+}
+main #section1 > * {
+  width: 50%;
+}
+main #section1 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+main #section1 > div h2 {
+  font-size: 4em;
+}
+main #section1 > div p {
+  font-size: 2em;
+  text-align: justify;
+}
+.group-btn{
     display: flex;
     gap: 10px;
 }
-header .start-btn{
-    padding: 10px 25px;
-    color: white;
-    border: 0;
-    background: #6520ec;
-    border-radius: 20px;
+.start-btn {
+  padding: 10px 25px;
+  color: white;
+  border: 0;
+  background: #6520ec;
+  border-radius: 20px;
+}
+.video-btn {
+    display: flex;
+    align-items: center;
+    border: 1px solid lightblue;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: white;
 }
