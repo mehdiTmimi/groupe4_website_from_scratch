@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul Moyenne | Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/utils.js" defer></script>
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <header class="app-header">
+        <div class="brand">
+            <div class="brand-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div class="brand-text">
+                <h1>Moyenne<span>.studio</span></h1>
+                <p>Calculateur de moyenne premium</p>
+            </div>
+        </div>
+        <div class="header-meta">
+            <span class="badge">Session 2025 / 2026</span>
+        </div>
+    </header>
+
+    <main class="layout">
+
+        <section class="panel form-panel">
+            <div class="panel-header">
+                <div>
+                    <span class="eyebrow">Étape 01</span>
+                    <h2>Saisissez vos notes</h2>
+                    <p class="subtitle">Entrez les notes de vos quatre matières pour obtenir votre moyenne instantanément.</p>
+                </div>
+                <div class="panel-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M9 11H5a2 2 0 0 0-2 2v7h18v-7a2 2 0 0 0-2-2h-4"/>
+                        <path d="M9 11V5a3 3 0 0 1 6 0v6"/>
+                    </svg>
+                </div>
+            </div>
+
+            <form class="grade-form" autocomplete="off">
+                <div class="grid">
+                    <div class="field">
+                        <label for="note1">
+                            <span class="field-label">Mathématiques</span>
+                            <span class="field-tag">/ 20</span>
+                        </label>
+                        <div class="input-wrap">
+                            <input type="number" id="note1" name="note1" min="0" max="20" step="0.25" placeholder="00.00">
+                            <span class="input-icon">∑</span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="note2">
+                            <span class="field-label">Physique</span>
+                            <span class="field-tag">/ 20</span>
+                        </label>
+                        <div class="input-wrap">
+                            <input type="number" id="note2" name="note2" min="0" max="20" step="0.25" placeholder="00.00">
+                            <span class="input-icon">⚛</span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="note3">
+                            <span class="field-label">Informatique</span>
+                            <span class="field-tag">/ 20</span>
+                        </label>
+                        <div class="input-wrap">
+                            <input type="number" id="note3" name="note3" min="0" max="20" step="0.25" placeholder="00.00">
+                            <span class="input-icon">⌘</span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="note4">
+                            <span class="field-label">Anglais</span>
+                            <span class="field-tag">/ 20</span>
+                        </label>
+                        <div class="input-wrap">
+                            <input type="number" id="note4" name="note4" min="0" max="20" step="0.25" placeholder="00.00">
+                            <span class="input-icon">☉</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="reset" class="btn btn-ghost">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 3-6.7L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                        Réinitialiser
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Calculer la moyenne</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"/>
+                            <path d="M13 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="result-preview" aria-live="polite">
+                    <div class="result-label">Moyenne actuelle</div>
+                    <div class="result-value">--<span>/20</span></div>
+                    <div class="result-mention">En attente de calcul</div>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel history-panel">
+            <div class="panel-header">
+                <div>
+                    <span class="eyebrow">Étape 02</span>
+                    <h2>Historique</h2>
+                    <p class="subtitle">Retrouvez vos derniers calculs et nettoyez ceux qui ne vous servent plus.</p>
+                </div>
+                <div class="history-stats">
+                    <span class="count">03</span>
+                    <span class="count-label">entrées</span>
+                </div>
+            </div>
+
+            <ul id="historyList" class="history-list">
+
+                <!-- <li class="history-item">
+                    <div class="history-top">
+                        <div class="history-meta">
+                            <span class="date">28 avril 2026</span>
+                            <span class="time">14:32</span>
+                        </div>
+                        <div class="history-mention mention-good">Très bien</div>
+                    </div>
+                    <div class="history-notes">
+                        <div class="note-chip"><span class="note-label">Math</span><span class="note-value">17.50</span></div>
+                        <div class="note-chip"><span class="note-label">Phys</span><span class="note-value">15.00</span></div>
+                        <div class="note-chip"><span class="note-label">Info</span><span class="note-value">18.25</span></div>
+                        <div class="note-chip"><span class="note-label">Ang</span><span class="note-value">14.75</span></div>
+                    </div>
+                    <div class="history-bottom">
+                        <div class="moyenne-display">
+                            <span class="moyenne-label">Moyenne</span>
+                            <span class="moyenne-value">16.38<small>/20</small></span>
+                        </div>
+                        <button type="button" class="btn-erase" aria-label="Supprimer l'entrée">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                                <path d="M10 11v6"/>
+                                <path d="M14 11v6"/>
+                            </svg>
+                            <span>Effacer</span>
+                        </button>
+                    </div>
+                </li>
+
+                <li class="history-item">
+                    <div class="history-top">
+                        <div class="history-meta">
+                            <span class="date">27 avril 2026</span>
+                            <span class="time">09:18</span>
+                        </div>
+                        <div class="history-mention mention-okay">Assez bien</div>
+                    </div>
+                    <div class="history-notes">
+                        <div class="note-chip"><span class="note-label">Math</span><span class="note-value">12.00</span></div>
+                        <div class="note-chip"><span class="note-label">Phys</span><span class="note-value">13.50</span></div>
+                        <div class="note-chip"><span class="note-label">Info</span><span class="note-value">15.00</span></div>
+                        <div class="note-chip"><span class="note-label">Ang</span><span class="note-value">11.25</span></div>
+                    </div>
+                    <div class="history-bottom">
+                        <div class="moyenne-display">
+                            <span class="moyenne-label">Moyenne</span>
+                            <span class="moyenne-value">12.94<small>/20</small></span>
+                        </div>
+                        <button type="button" class="btn-erase" aria-label="Supprimer l'entrée">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                                <path d="M10 11v6"/>
+                                <path d="M14 11v6"/>
+                            </svg>
+                            <span>Effacer</span>
+                        </button>
+                    </div>
+                </li>
+
+                <li class="history-item">
+                    <div class="history-top">
+                        <div class="history-meta">
+                            <span class="date">25 avril 2026</span>
+                            <span class="time">21:04</span>
+                        </div>
+                        <div class="history-mention mention-low">Insuffisant</div>
+                    </div>
+                    <div class="history-notes">
+                        <div class="note-chip"><span class="note-label">Math</span><span class="note-value">08.50</span></div>
+                        <div class="note-chip"><span class="note-label">Phys</span><span class="note-value">09.75</span></div>
+                        <div class="note-chip"><span class="note-label">Info</span><span class="note-value">10.00</span></div>
+                        <div class="note-chip"><span class="note-label">Ang</span><span class="note-value">07.50</span></div>
+                    </div>
+                    <div class="history-bottom">
+                        <div class="moyenne-display">
+                            <span class="moyenne-label">Moyenne</span>
+                            <span class="moyenne-value">08.94<small>/20</small></span>
+                        </div>
+                        <button type="button" class="btn-erase" aria-label="Supprimer l'entrée">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                                <path d="M10 11v6"/>
+                                <path d="M14 11v6"/>
+                            </svg>
+                            <span>Effacer</span>
+                        </button>
+                    </div>
+                </li> -->
+
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="app-footer">
+        <p>Conçu avec soin · Moyenne.studio © 2026</p>
+    </footer>
+</body>
+</html>

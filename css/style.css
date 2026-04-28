@@ -1,3 +1,4 @@
+ /* exemple position absolute https://mehditmimi.com/tools/web-playground/?html=DwEwlgbgBAxgNgQwM5ILwCIB2kCmCCuAjOgHwBQUlUoksiKG2Ee%2BATKRVVzdPMmllwEAzBy7iqwAEb4ALrID2mKLICeABxwYZ8paXhgYAa2AB6HYszkJlM%2BAjXJp%2B%2BTuQSQA&css=EYewJgngBA3gUFKAHAhmMBLAdgcwFxQCsADEgB4DcCUwKAxgNY4BOIArlmALR0gA2IZgRYoIVRAAsAphhwSALgQBMxYgDcJVAL5w4AOiwY1UlGwCMsarUYt2nHv0EFmUsOKjTZCggA51m6lR0bHwiUkpAkABnDHkMECxnKT4UOONtXQMjEzYlS0RrJlYObl4BIRo%2BNil3TzlFKDNVAFJ3IMxcAhJyDP1DY1MAZnyaeiK7UscKiGSBAHdamXqCJuJWyJi4hKSUtJq4HWA2eXkE%2BEQkaNj4xKgUYCj%2BY-2CkBOQAFsCcPdmLwafgcgA */
 :root {
   --padding-left-right: 40px;
 }
@@ -106,19 +107,35 @@ main #section1 > div p {
   gap: 20px;
   border-radius: 15px;
 }
-.section2 article h3{
+.section2 article h3 {
   font-size: 2em;
   margin-bottom: 10px;
 }
-.section2 article p{
+.section2 article p {
   font-size: 1.2em;
 }
 .section2 article img {
   height: 150px;
 }
-.section2>div{
+.section2 > div {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: flex-start;
+}
+
+@media screen and (max-width: 980px) {
+  body header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .section2 {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section2 article {
+    flex-direction: column;
+  }
 }
