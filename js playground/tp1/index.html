@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/utils.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <div class="background-orbs">
@@ -53,7 +54,7 @@
                 </div>
             </div>
 
-            <form class="grade-form" autocomplete="off">
+            <div class="grade-form">
                 <div class="grid">
                     <div class="field">
                         <label for="note1">
@@ -101,14 +102,14 @@
                 </div>
 
                 <div class="actions">
-                    <button type="reset" class="btn btn-ghost">
+                    <button id="resetbtn" class="btn btn-ghost">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M3 12a9 9 0 1 0 3-6.7L3 8"/>
                             <path d="M3 3v5h5"/>
                         </svg>
                         Réinitialiser
                     </button>
-                    <button type="submit" class="btn btn-primary">
+                    <button class="btn btn-primary">
                         <span>Calculer la moyenne</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14"/>
@@ -122,7 +123,7 @@
                     <div class="result-value">--<span>/20</span></div>
                     <div class="result-mention">En attente de calcul</div>
                 </div>
-            </form>
+            </div>
         </section>
 
         <section class="panel history-panel">

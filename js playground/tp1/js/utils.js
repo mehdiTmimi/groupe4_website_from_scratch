@@ -40,3 +40,45 @@ const addMoyenneToList = (date, dateTime, mention, matiere1, note1,
                     </div>
                 </li>`
 }
+
+const addMoyenneToList2 = (data) => {
+    let mentionClass = ""
+    if (data.moyenne > 14)
+        mentionClass = "mention-good"
+    else if (data.moyenne > 10)
+        mentionClass = "mention-okay"
+    else
+        mentionClass = "mention-low"
+    historyList.innerHTML += `
+    <li class="history-item">
+                    <div class="history-top">
+                        <div class="history-meta">
+                            <span class="date">${data.date}</span>
+                            <span class="time">${data.dateTime}</span>
+                        </div>
+                        <div class="history-mention ${data.mentionClass}">${data.mention}</div>
+                    </div>
+                    <div class="history-notes">
+                        <div class="note-chip"><span class="note-label">${data.matiere1}</span><span class="note-value">${data.note1}</span></div>
+                        <div class="note-chip"><span class="note-label">${data.matiere2}</span><span class="note-value">${data.note2}</span></div>
+                        <div class="note-chip"><span class="note-label">${data.matiere3}</span><span class="note-value">${data.note3}</span></div>
+                        <div class="note-chip"><span class="note-label">${data.matiere4}</span><span class="note-value">${data.note4}</span></div>
+                    </div>
+                    <div class="history-bottom">
+                        <div class="moyenne-display">
+                            <span class="moyenne-label">Moyenne</span>
+                            <span class="moyenne-value">${data.moyenne}<small>/20</small></span>
+                        </div>
+                        <button type="button" class="btn-erase" aria-label="Supprimer l'entrée">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 6h18"/>
+                                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                                <path d="M10 11v6"/>
+                                <path d="M14 11v6"/>
+                            </svg>
+                            <span>Effacer</span>
+                        </button>
+                    </div>
+                </li>`
+}
