@@ -49,8 +49,9 @@ const addMoyenneToList2 = (data) => {
         mentionClass = "mention-okay"
     else
         mentionClass = "mention-low"
-    historyList.innerHTML += `
-    <li class="history-item">
+    let li = document.createElement("li")
+    li.classList.add("history-item")
+    li.innerHTML = `
                     <div class="history-top">
                         <div class="history-meta">
                             <span class="date">${data.date}</span>
@@ -80,5 +81,22 @@ const addMoyenneToList2 = (data) => {
                             <span>Effacer</span>
                         </button>
                     </div>
-                </li>`
+                `
+    li.querySelector(".btn-erase").addEventListener("click", () => {
+        li.remove()
+        let newList = []
+        for (let i = 0; i < moyenneHistory.length; i++)
+            if (moyenneHistory[i] != data)
+                newList.push(moyenneHistory[i])
+        moyenneHistory = newList
+        refreshCount_version2()
+        localStorage.moyenneHistory = JSON.stringify(moyenneHistory)
+    })
+    historyList.append(li)
+}
+const refreshCount_version1 = () => {
+    document.querySelector(".count").textContent = historyList.getElementsByTagName("li").length
+}
+const refreshCount_version2 = () => {
+    document.querySelector(".count").textContent = moyenneHistory.length
 }

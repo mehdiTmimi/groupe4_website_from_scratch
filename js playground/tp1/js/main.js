@@ -50,6 +50,7 @@ moyennebtn.addEventListener("click", () => {
     addMoyenneToList2(data)
     moyenneHistory.push(data)
     localStorage.moyenneHistory = JSON.stringify(moyenneHistory)
+    refreshCount_version2()
     vider()
 })
 
@@ -58,4 +59,4 @@ let moyenneHistory = JSON.parse(localStorage.moyenneHistory || "[]")
 for(let i=0; i<moyenneHistory.length; i++){
     addMoyenneToList2(moyenneHistory[i])
 }
-
+refreshCount_version2()
